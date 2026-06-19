@@ -1,0 +1,29 @@
+{
+  "name": "telegram-financial-bot-main",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "This is a financial telegram bot where i can track my daily expenses, like supermarket, car, etc,",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/ssr": "^0.12.0",
+    "@supabase/supabase-js": "^2.108.2",
+    "dotenv": "^17.4.2",
+    "pg": "^8.21.0",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.3",
+    "@types/pg": "^8.20.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  }
+}
