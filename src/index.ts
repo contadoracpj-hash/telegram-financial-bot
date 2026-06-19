@@ -92,6 +92,12 @@ Después de escribir el gasto y enviarselo al bot, este te va a preguntar en que
   ctx.replyWithMarkdown(mensajeAyuda);
 });
 
+// send welcome message with some instructions
+bot.start((ctx) => {
+  ctx.reply("¡Hola! Soy tu bot de finanzas. Para empezar, crea tus categorías con /categoria [nombre]. Usa /ayuda si tienes dudas.");
+});
+
+
 // regex to detect any format: "20000 something" or "something 20000"
 bot.hears(/^(\d+(?:\.\d+)?)\s+(.+)$|^(.+)\s+(\d+(?:\.\d+)?)$/, async (ctx) => {
   const match = ctx.match;
