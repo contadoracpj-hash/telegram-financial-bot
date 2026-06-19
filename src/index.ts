@@ -2,7 +2,7 @@ import 'dotenv/config';
 import { Telegraf, Markup } from 'telegraf';
 import pg from 'pg';
 import { formatCurrency, getPeriodFilter } from './utils.js';
-
+import http from 'http';
 const { Pool } = pg;
 
 // verify .env
@@ -171,6 +171,13 @@ bot.action(/^(per|cat_sel|cat_fil|edit_cat)_(.+)$/, async (ctx) => {
     ctx.editMessageText(`✅ Gasto [ID:${expenseId}] movido exitosamente.`);
   }
 });
+
+// we can add this if the bot fall asleep in render, using something like uptimereboot to ping the server every x time so it will never fall asleep
+// const server = http.createServer((req, res) => {
+//   res.writeHead(200);
+//   res.end('Bot activo');
+// });
+// server.listen(process.env.PORT || 3000);
 
 // launch bot
 bot.launch().then(() => {
